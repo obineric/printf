@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 			count++;
 			i++;
 		}
-		else
+		else if (format[i] == '%' && format[i + 1] == 's')
 		{
 			int j = 0;
 
@@ -55,6 +55,10 @@ int _printf(const char *format, ...)
 			write(1, &ptr[0], j);
 			count = count + j;
 			i++;
+		}
+		else
+		{
+			continue;
 		}
 
 	va_end(ap);
