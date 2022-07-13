@@ -58,7 +58,9 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			continue;
+			write(1, "%%", 1);
+			count++;
+			i++;
 		}
 
 	va_end(ap);
