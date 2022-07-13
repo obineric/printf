@@ -22,10 +22,10 @@ int _putchar(char c)
 int _printf(const char *format, ...)
 {
 	va_list ap;
-
-	va_start(ap, format);
 	int i;
 	int count = 0;
+
+	va_start(ap, format);
 
 	for (i = 0; format && format[i] != '\0'; i++)
 		if (format[i] != '%')
